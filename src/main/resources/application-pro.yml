@@ -3,4 +3,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: ${OKTA_OAUTH2_ISSUER}/v1/keys
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
