@@ -2,7 +2,7 @@ spring:
     data: 
         mongodb:
             authentication-database: admin
-            database: test 
+            database: lavanda 
             host: localhost 
             password:  example
             port: 27017 
