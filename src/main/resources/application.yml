@@ -1,6 +1,6 @@
 spring:
   application:
-    name: lavanda-filebot
+    name: lavanda-filebot-reports
   profiles:
     active: dev
 cloud:
