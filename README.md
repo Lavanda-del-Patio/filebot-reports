@@ -1,2 +1,3 @@
 # lavanda-filebot
-Microservicio que contiene todas las modificiones que ha realizado el job de filebot.
+
+Microservicio que lee de la base de datos mongo para obtener los ultimos parseos realizados por el filebot
