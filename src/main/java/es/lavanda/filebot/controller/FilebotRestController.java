@@ -1,5 +1,9 @@
 package es.lavanda.filebot.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.lavanda.filebot.model.Filebot;
+import es.lavanda.filebot.service.CsvExportService;
 import es.lavanda.filebot.service.FilebotService;
 import lombok.RequiredArgsConstructor;
 
@@ -24,9 +29,18 @@ public class FilebotRestController {
 
     private final FilebotService filebotService;
 
+    private final CsvExportService csvExportService;
+
     @GetMapping
     public ResponseEntity<Page<Filebot>> getAll(Pageable pageable) {
         return ResponseEntity.ok(filebotService.getAllPageable(pageable));
+    }
+
+    @GetMapping("/csv")
+    public void getAllEmployeesInCsv(HttpServletResponse servletResponse) throws IOException {
+        servletResponse.setContentType("text/csv");
+        servletResponse.addHeader("Content-Disposition", "attachment; filename=\"employees.csv\"");
+        csvExportService.writeFilebotToCSV(servletResponse.getWriter());
     }
 
 }
