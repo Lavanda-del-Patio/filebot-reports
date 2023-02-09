@@ -82,10 +82,12 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.4.2</version>
 		</dependency>
-		<!-- ====================================================================== -->
-		<!-- ===================== SPRING-SECURITY ================================ -->
-		<!-- ====================================================================== -->
-
+		<!-- ============================= APACHE-COMMONS ================================= -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.10.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
