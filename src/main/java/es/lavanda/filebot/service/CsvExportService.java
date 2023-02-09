@@ -23,7 +23,6 @@ public class CsvExportService {
 
 
     public void writeFilebotToCSV(Writer writer) {
-
         List<Filebot> filebots = filebotRepository.findAll();
         try (CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT)) {
             for (Filebot employee : filebots) {
